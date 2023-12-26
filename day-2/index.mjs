@@ -1,11 +1,13 @@
 import { readFileSync } from 'fs';
 
 
+const input = process.env.AOC_INPUT;
+
+
 function partOne() {
   let sum = 0;
 
-  readFileSync('input.txt')
-    .toString()
+  input
     .split('\n')
     .map(line => line.split(':')[1])
     .slice(0, -1)

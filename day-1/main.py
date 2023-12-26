@@ -1,5 +1,7 @@
-with open('input.txt', 'r') as f:
-    lines = f.readlines()
+import os
+
+
+lines = os.getenv('AOC_INPUT').split('\n')
 
 
 def part_one():
