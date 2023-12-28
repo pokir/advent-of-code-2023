@@ -13,9 +13,8 @@ public class Main {
     for (String line : lines) {
       String[] numbers = line.split(":")[1].split("\\|");
 
-      List<String> winningNumbers =
-          new LinkedList<>(Arrays.asList(numbers[0].trim().replaceAll(" +", " ").split(" ")));
-      String[] yourNumbers = numbers[1].trim().replaceAll(" +", " ").split(" ");
+      List<String> winningNumbers = new LinkedList<>(Arrays.asList(numbers[0].trim().split(" +")));
+      String[] yourNumbers = numbers[1].trim().split(" +");
 
       int points = 0;
 
