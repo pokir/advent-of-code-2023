@@ -1,6 +1,3 @@
-import { readFileSync } from 'fs';
-
-
 const games = process.env.AOC_INPUT
   .split('\n')
   .map(line => line.split(':')[1])
