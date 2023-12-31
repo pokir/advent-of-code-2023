@@ -1,4 +1,5 @@
 const games = process.env.AOC_INPUT
+  .trim()
   .split('\n')
   .map(line => line.split(':')[1])
   .map(line => line.split(';'))
@@ -6,9 +7,7 @@ const games = process.env.AOC_INPUT
   .map(line => line.map(hand => hand.map(string => {
     const [ _, number, color ] = string.split(' ');
     return [Number.parseInt(number), color];
-  })))
-
-
+  })));
 
 
 function partOne() {
@@ -45,9 +44,6 @@ function partTwo() {
           maxes[color] = number;
       });
     });
-
-    console.log(game);
-    console.log(maxes);
 
     sumOfPowers += maxes.red * maxes.blue * maxes.green;
   });

@@ -26,4 +26,9 @@ if not os.path.isfile(f'inputs/day-{day}.txt'):
     print('The input file does not exist')
     exit()
 
-os.system(f'cd day-{day} && AOC_INPUT=$(cat ../inputs/day-{day}.txt) {command}')
+# get the input
+with open(f'inputs/day-{day}.txt', 'r') as f:
+    os.environ['AOC_INPUT'] = f.read()
+
+os.system(f'cd day-{day} && {command}')
+os.unsetenv("AOC_INPUT")
